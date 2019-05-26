@@ -16,3 +16,5 @@ api_version = 4
 ```
 
 The script will create a `repos` directory in the same location as the `glbackup.py` file. All of your Gitlab repositories will be cloned into `repos`.
+
+It's worth noting that there is currently no handling for updating already cloned repos.
