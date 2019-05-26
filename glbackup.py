@@ -1,5 +1,6 @@
 import gitlab
 import git
+from pathlib import Path
 import os
 
 
@@ -9,7 +10,14 @@ gl = gitlab.Gitlab.from_config("default", [".config"])
 
 my_projects = gl.projects.list(owned=True, all=True)
 
-os.chdir("exports")
+if Path("repos").exists():
+    print("Moving to repos directory")
+    os.chdir("repos")    
+else:
+    print("Making repos directory")
+    Path("repos").mkdir()
+    print("Moving to repos directory")
+    os.chdir("repos")
 
 for project in my_projects:
     repo = gl.projects.get(project.id)
