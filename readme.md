@@ -1,4 +1,6 @@
 A simple utility to clone all of your Gitlab repositories so you have a backup.
+===============
+Assumes you have git installed and on your path.
 
 Start with `pipenv install`.
 
@@ -14,6 +16,7 @@ url = https://gitlab.com
 private_token = PrivateTokenHere
 api_version = 4
 ```
+To use, simply run `pipenv run python glbackup.py`.
 
 The script will create a `repos` directory in the same location as the `glbackup.py` file. All of your Gitlab repositories will be cloned into `repos`.
 
